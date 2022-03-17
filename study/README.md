@@ -55,6 +55,17 @@ print(a, b)
 
 ```python
 a = [0] * n
+
+# 값을 입력 받아 초기화(한줄에 한 값씩 입력)
+arr = [int(sys.stdin.readline().rstrip()) for _ in range(n)]
+# 같은 코드
+arr = []
+for _ in range(n):
+    arr.append(int(sys.stdin.readline().rstrip()))
+
+# 한 줄에 여러 값 입력
+b = list(map(int, sys.stdin.readline().split()))
+b = list(map(int, input().split()))
 ```
 
 ## 리스트 인덱싱과 슬라이싱
