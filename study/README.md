@@ -371,7 +371,7 @@ def count_by_range(a, left_value, right_value):
 
 - `deque`: 단순하게 큐라고 생각하고 사용하자.
   - `popleft()`, `pop()`
-  - `appendleft(x)`, `append()
+  - `appendleft(x)`, `append()`
 - `Counter`
 
 ```python
