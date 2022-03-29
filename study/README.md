@@ -24,6 +24,7 @@
   - [heapq](#heapq)
   - [bisect](#bisect)
   - [collections](#collections)
+- [2차원 배열 돌리기](#2차원-배열-돌리기)
 
 // 계속 업데이트 될 예정
 
@@ -379,4 +380,29 @@ from collections import Counter
 
 counter = Counter(['a', 'b', 'c', 'a', 'a', 'b'])
 print(counter['a']) # 3 출력
+```
+
+# 2차원 배열 돌리기
+시뮬레이션 유형에서 한 번씩 등장하는 내용이다.
+
+```python
+def rotate(a):
+    row_length = len(a)
+    column_length = len(a[0])
+
+    res = [[0] * row_length for _ in range(column_length)]
+    for r in range(row_length):
+        for c in range(column_length):
+            res[c][row_length - 1 - r] = a[r][c]
+
+    return res
+
+a = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+print(rotate(a))
+print(a)
 ```
