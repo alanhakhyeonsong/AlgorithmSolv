@@ -25,6 +25,8 @@
   - [bisect](#bisect)
   - [collections](#collections)
 - [2차원 배열 돌리기](#2차원-배열-돌리기)
+- [enumerate](#enumerate)
+- [defaultdict](#defaultdict)
 
 // 계속 업데이트 될 예정
 
@@ -405,4 +407,39 @@ a = [
 
 print(rotate(a))
 print(a)
+```
+
+# enumerate
+파이썬 답게 인덱스와 원소를 동시에 접근하면서 루프를 돌릴 수 있는 방법이다.
+
+```python
+for idx, x in enumerate(id_list):
+    print(idx, x)
+
+# 0 A
+# 1 B
+# 2 C
+```
+
+추가로 `enumerate`의 인자로 `start=`를 지정한다면, 0이 아니라 지정한 숫자부터 시작할 수 있다.
+
+// [python enumerate](https://www.daleseo.com/python-enumerate/)
+
+# defaultdict
+dictionary의 키에 대한 값이 없는 경우에 대한 처리를 해야하는 경우 기본 딕셔너리보다 유용하게 사용할 수 있는 방법이다.  
+Java의 `HashMap.getOrDefault()`와 유사한 컨셉이다.
+
+`defaultdict` 클래스의 생성자로 기본값을 생성해주는 함수를 넘기면, 모든 키에 대해 값이 없는 경우 자동으로 생성자의 인자로 넘어온 함수를 호출하여 그 결과값으로 설정해준다.
+
+이를 활용하면 딕셔너리의 기본값으로 int 뿐만 아니라 list, set 역시 지정할 수 있다.
+```python
+from collection import defaultdict
+
+banned_cnt = defaultdict(int)
+report_dict = defaultdict(set)
+
+for id in report:
+    banned_cnt[id.split(" ")[1]] += 1
+
+...
 ```
