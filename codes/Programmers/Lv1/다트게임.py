@@ -1,3 +1,4 @@
+# 2018 KAKAO BLIND RECRUITMENT - 신입 공채 1차
 def solution(dartResult):
     n = ''
     score = []
